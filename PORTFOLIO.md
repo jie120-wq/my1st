@@ -29,7 +29,7 @@ GitHub Pages：`https://<你的帳號>.github.io/<你的repo名稱>/`
 - 使用 GitHub Copilot Agent Mode 協助理解需求、提出修改計畫、實作功能與執行瀏覽器驗證。
 - 透過 `.vscode/mcp.json` 設定 Microsoft Learn MCP，並用它查詢官方文件。
 - `.github/prompts/fix-issue.prompt.md` 定義 issue 工作流程，包括摘要需求、等待計畫確認、建立分支、修改、驗證與提交推送。
-- 本次環境沒有可讀取 issue 或建立 PR 的 GitHub MCP 工具；issue 內容透過公開頁面核對，尚未建立 PR。
+- issue #4 的內容透過 GitHub 公開頁面核對；PR #5 透過 GitHub 網頁建立並合併。GitHub MCP 的 issue 讀取與 PR 建立工具在本次環境不可用。
 
 ## 我學到什麼
 
