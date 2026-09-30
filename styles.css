@@ -14,7 +14,34 @@
   --accent-hover: #2f6c53;
   --accent-wash: #e5f1e9;
   --danger: #bd6254;
+  --danger-wash: #fbefed;
+  --page-pattern-dot: #dfe9e0;
+  --card-border: rgba(219, 229, 220, 0.85);
+  --placeholder: #9aa69e;
+  --focus-ring: rgba(60, 128, 100, 0.3);
+  --footer-muted: #9ba89f;
   --shadow: 0 20px 60px rgba(42, 70, 54, 0.09), 0 3px 10px rgba(42, 70, 54, 0.04);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #18221d;
+  --surface: #222f28;
+  --surface-soft: #2b3a31;
+  --text: #e6eee8;
+  --muted: #a5b4a9;
+  --line: #3a4a3f;
+  --accent: #85bd98;
+  --accent-hover: #9acbaa;
+  --accent-wash: #334a3a;
+  --danger: #e49a8d;
+  --danger-wash: #493431;
+  --page-pattern-dot: #34453a;
+  --card-border: #3a4a3f;
+  --placeholder: #a5b4a9;
+  --focus-ring: rgba(133, 189, 152, 0.4);
+  --footer-muted: #86978b;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.28), 0 3px 10px rgba(0, 0, 0, 0.16);
 }
 
 body {
@@ -26,7 +53,7 @@ body {
   align-items: flex-start;
   color: var(--text);
   background-color: var(--page);
-  background-image: radial-gradient(#dfe9e0 0.7px, transparent 0.7px);
+  background-image: radial-gradient(var(--page-pattern-dot) 0.7px, transparent 0.7px);
   background-size: 18px 18px;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
@@ -35,13 +62,20 @@ body {
   width: min(100%, 520px);
   padding: 38px 40px 24px;
   background: var(--surface);
-  border: 1px solid rgba(219, 229, 220, 0.85);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   box-shadow: var(--shadow);
 }
 
 .card-header {
   margin-bottom: 28px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .eyebrow {
@@ -63,6 +97,31 @@ h1 span {
   color: var(--accent);
 }
 
+.theme-toggle {
+  min-height: 38px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  color: var(--text);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+.theme-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .subtitle {
   margin: 8px 0 0;
   color: var(--muted);
@@ -72,7 +131,7 @@ h1 span {
 .todo-form {
   display: flex;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .todo-form input {
@@ -89,7 +148,7 @@ h1 span {
 }
 
 .todo-form input::placeholder {
-  color: #9aa69e;
+  color: var(--placeholder);
 }
 
 .todo-form input:focus {
@@ -127,6 +186,37 @@ h1 span {
 .add-button span:first-child {
   font-size: 1.25rem;
   line-height: 1;
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.filter-button {
+  min-height: 38px;
+  padding: 6px 10px;
+  color: var(--muted);
+  background: var(--surface-soft);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.filter-button:hover {
+  color: var(--text);
+}
+
+.filter-button.is-active {
+  color: var(--accent);
+  background: var(--accent-wash);
+  border-color: var(--accent);
+  font-weight: 700;
 }
 
 .todo-list {
@@ -189,12 +279,12 @@ h1 span {
 .delete-button:hover,
 .delete-button:focus-visible {
   color: var(--danger);
-  background: #fbefed;
+  background: var(--danger-wash);
 }
 
 button:focus-visible,
 .todo-checkbox:focus-visible {
-  outline: 3px solid rgba(60, 128, 100, 0.3);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -219,7 +309,7 @@ button:focus-visible,
 }
 
 .footer-mark {
-  color: #9ba89f;
+  color: var(--footer-muted);
 }
 
 .visually-hidden {

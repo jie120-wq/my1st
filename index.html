@@ -12,7 +12,13 @@
   <main class="todo-card" aria-labelledby="page-title">
     <header class="card-header">
       <p class="eyebrow">把今天整理得剛剛好</p>
-      <h1 id="page-title">待辦清單<span aria-hidden="true">.</span></h1>
+      <div class="title-row">
+        <h1 id="page-title">待辦清單<span aria-hidden="true">.</span></h1>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切換為深色模式" aria-pressed="false">
+          <span id="theme-icon" class="theme-icon" aria-hidden="true">☾</span>
+          <span id="theme-label">深色模式</span>
+        </button>
+      </div>
       <p class="subtitle">一件一件來，讓想做的事有個著落。</p>
     </header>
 
@@ -31,6 +37,12 @@
         <span>新增</span>
       </button>
     </form>
+
+    <nav class="filters" aria-label="篩選待辦事項">
+      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">全部</button>
+      <button class="filter-button" type="button" data-filter="active" aria-pressed="false">未完成</button>
+      <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">已完成</button>
+    </nav>
 
     <section class="list-section" aria-label="待辦事項">
       <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
