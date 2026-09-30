@@ -1,5 +1,3 @@
-[待辦清單 App 作品集](PORTFOLIO.md)
-
 <div align="center">
 
 # 🎉 Congratulations jie120-wq! 🎉
