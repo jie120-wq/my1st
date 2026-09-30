@@ -25,3 +25,6 @@ node_modules/
 
 # 完成登記匯出結果(含學員個資,不進版控)
 /out/
+
+# 工作區中的巢狀 clone,不是 repo 內容
+/my1st/
